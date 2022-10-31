@@ -1,0 +1,34 @@
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">The Gossip Project</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href=<%= contact_path %> class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href=<%= team_path %> class="nav-link">Team</a></li>
+      </ul>
+    </header>
+    <section>
+    <h1> Bienvenue sur The Gossip Project </h1>
+
+    <p class ="t">Voici la liste des potins : </p>
+
+    <% @gossip.each do |i| %>
+      <div class="card text-center">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= i.user.first_name %></h5>
+        <p class="card-text"><%= i.title %></p>
+        <a href="/potin/<%=i.id%>" class="btn btn-primary">Voir les informations du potin</a>
+      </div>
+      <div class="card-footer text-muted">
+        <%end%>
+      </div>
+    </div>
+
+    </section>
+ 
